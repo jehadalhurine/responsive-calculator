@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive Calculator </title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 400px;
+        height: 400px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        width: 50px;
+        height: 30px;
+        background: transparent;
+        border-style: none;
+        cursor: pointer;
+        font-size: 1rem;
+        ;
+    }
+
+    #button4 {
+        background-color: rgb(255, 187, 0);
+        border-style: none;
+        margin: 10px;
+        letter-spacing: 1px;
+    }
+
+    #button8 {
+        background-color: rgb(255, 209, 82);
+        border-style: none;
+        margin: 10px;
+        letter-spacing: 1px;
+    }
+
+    #button12 {
+        background-color: rgb(248, 217, 132);
+        border-style: none;
+        margin: 10px;
+        letter-spacing: 1px;
+    }
+
+    #button16 {
+        background-color: rgb(245, 227, 178);
+        border-style: none;
+        margin: 10px;
+        letter-spacing: 1px;
+    }
+
+    input {
+        border-style: none;
+        border-bottom-style: solid;
+        outline: none;
+        width: 250px;
+        height: 50px;
+        font-size: 2rem;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <input type="text" id="input">
+        </div>
+        <div class="content">
+            <div class="one">
+                <button id="button1" onclick="press(1)">1</button>
+                <button id="button2" onclick="press(2)">2</button>
+                <button id="button3" onclick="press(3)">3</button>
+                <button id="button4" onclick="press('+')">+</button>
+            </div>
+            <div class="two">
+                <button id="button5" onclick="press(4)">4</button>
+                <button id="button6" onclick="press(5)">5</button>
+                <button id="button7" onclick="press(6)">6</button>
+                <button id="button8" onclick="press('-')">-</button>
+            </div>
+            <div class="three">
+                <button id="button9" onclick="press(7)">7</button>
+                <button id="button10" onclick="press(8)">8</button>
+                <button id="button11" onclick="press(9)">9</button>
+                <button id="button12" onclick="press('*')">*</button>
+            </div>
+            <button id="button13" onclick="press('.')">.</button>
+            <button id="button14" onclick="press(0)">0</button>
+            <button id="button15" onclick="press(' ')">c</button>
+            <button id="button16" onclick="press('/')">/</button>
+            <div class="four">
+                <button id="button17" onclick="equal('=')"
+                    style="width: 100%; background-color: black; color:white">=</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    let x = document.getElementById("input");
+    var z = '';
+    function press(num) {
+        z += num;
+
+        x.value = z;
+
+
+    }
+    function equal() {
+        x.value = eval(z);
+
+
+
+    };
+
+
+</script>
+
+</html>
